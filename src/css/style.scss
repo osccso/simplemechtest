@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+	overflow: hidden;
+}
+
+#app-container {
+  aspect-ratio: 1136/639;
+  position: relative;
+
+	@keyframes appear {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}
+
+	@keyframes tilt-shaking {
+		0% { transform: rotate(0deg); }
+		25% { transform: rotate(5deg); }
+		50% { transform: rotate(0eg); }
+		75% { transform: rotate(-5deg); }
+		100% { transform: rotate(0deg); }
+	}
+
+	@keyframes dissapear {
+		0% {opacity: 1;}
+		50% {opacity: 0.5;}
+		90% {opacity: 0;}
+		100% {opacity: 0; display: none;}
+	}
+
+	.shake{
+		animation: tilt-shaking 1s ease-in-out;
+	}
+	.out{
+		animation-name: dissapear;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+
+	.entrance{
+		animation-name: appear;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+
+	.zone{
+		aspect-ratio: 1/1;
+	}
+
+	.button{
+		cursor: pointer;
+	}
+	.button:hover{
+		transform: scale(0.98);
+		transition: all 0.2s;
+	}
+	.button:active{
+		transform: scale(1.05);
+		transition: all 0.1s;
+	}
+	
+	.draggable{
+		cursor: move;
+	}
+	.draggable:active{
+		cursor: grabbing;
+	}
+}
