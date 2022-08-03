@@ -45,4 +45,4 @@ npm run preview
 ```
 ## Visit the link below to check the app
 
-this site was built using Vercel [simplemechsite](https://simplemechtest.vercel.app/))
+this site was built using Vercel [simplemechsite](https://simplemechtest.vercel.app/)
